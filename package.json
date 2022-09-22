@@ -2,21 +2,17 @@
   "name": "nextjs-template",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "npmではなくyarnを使用してください"
-  },
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "package-update": "yarn upgrade-interactive --latest",
     "lint": "run-p lint:*",
     "lint:eslint": "next lint",
     "lint:prettier": "prettier --check .",
     "lint:typecheck": "tsc --noEmit",
-    "fix": "run-s fix:eslint fix:prettier",
-    "fix:eslint": "yarn lint:eslint --fix",
-    "fix:prettier": "yarn lint:prettier --write",
+    "fix": "run-s -c fix:eslint fix:prettier",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "fix:prettier": "npm run lint:prettier -- --write",
     "test": "jest --watch",
     "prepare": "husky install"
   },
