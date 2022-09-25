@@ -9,5 +9,6 @@ export default function handler(
   _req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  // eslint-disable-next-line @typescript-eslint/no-magic-numbers
   res.status(200).json({ name: "John Doe" });
 }
