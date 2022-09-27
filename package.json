@@ -7,13 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "run-p lint:*",
-    "lint:eslint": "next lint",
+    "lint:eslint": "eslint --cache .",
     "lint:prettier": "prettier --check .",
     "lint:typecheck": "tsc --noEmit",
     "fix": "run-s -c fix:eslint fix:prettier",
     "fix:eslint": "npm run lint:eslint -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
     "test": "jest --watch",
+    "rule-performance": "TIMING=1 eslint .",
     "prepare": "husky install"
   },
   "dependencies": {
